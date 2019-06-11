@@ -31,6 +31,7 @@ public:
 		
 		My_string temp_str;
 		temp_str.str = new char[strlen(this->str) + strlen(other.str) + 1];
+		temp_str.str_lenght = strlen(this->str) + strlen(other.str) + 1;
 		int i = 0;
 		for (; i < strlen(this->str); i++)
 		{
@@ -59,6 +60,10 @@ public:
 	friend ostream& operator <<(ostream &out, const My_string &other) {
 		out << other.str;
 		return out;
+	}
+
+	int length() {
+		return str_lenght;
 	}
 private:
 	char *str;
@@ -96,7 +101,10 @@ void My_string::print() {
 int main() {
 	My_string str = "Hello";
 	My_string str1 = "World";
-	cout << str+str1<<endl;
+	My_string result = str1 + str;
+	cout << str.length() << endl;
+	cout << str1.length() << endl;
+	cout << result.length() << endl;
 	system("pause");
 	return 0;
 }

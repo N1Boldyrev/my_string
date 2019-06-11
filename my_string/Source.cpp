@@ -91,15 +91,7 @@ void My_string::print() {
 
 int main() {
 	setlocale(LC_ALL, "Russian");
-	My_string str1="Моча";
-	My_string str2="съела";
-	My_string str3 ="говно";
-	My_string result = str1 + " " + str2 + " " + str3;
-	cout << "Слово 1= ";str1.print();
-	cout << "Слово 2= "; str2.print();
-	cout << "Слово 3= "; str3.print();
-	cout << "Результат= ";
-	result.print();
+	
 	system("pause");
 	return 0;
 }

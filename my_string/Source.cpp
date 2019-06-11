@@ -56,6 +56,10 @@ public:
 		this->str[str_lenght] = '\0';
 	}
 
+	friend ostream& operator <<(ostream &out, const My_string &other) {
+		out << other.str;
+		return out;
+	}
 private:
 	char *str;
 	int str_lenght = 0;
@@ -90,8 +94,9 @@ void My_string::print() {
 }
 
 int main() {
-	setlocale(LC_ALL, "Russian");
-	
+	My_string str = "Hello";
+	My_string str1 = "World";
+	cout << str+str1<<endl;
 	system("pause");
 	return 0;
 }

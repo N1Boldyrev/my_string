@@ -2,6 +2,8 @@
 
 using namespace std;
 
+
+
 class My_string
 {
 public:
@@ -9,7 +11,6 @@ public:
 	My_string(const char *str);
 	~My_string();
 	void print();
-
 
 	My_string& operator =(const My_string &other) {
 
@@ -56,6 +57,18 @@ public:
 
 		this->str[str_lenght] = '\0';
 	}
+	 bool operator ==(const My_string &other) {
+		if (this->str_lenght != other.str_lenght) {
+			return false;
+		}
+		for (int i = 0; i < this->str_lenght; i++)
+		{
+			if (this->str[i] != other.str[i]) {
+				return false;
+			}
+		}
+		return true;
+	}
 
 	friend ostream& operator <<(ostream &out, const My_string &other) {
 		out << other.str;
@@ -98,13 +111,20 @@ void My_string::print() {
 	cout << endl;
 }
 
+int str_len(const char *str) {
+	int len = 0;
+	while (str != '\0')
+	{
+		len++;
+	}
+	return len;
+}
+
+
 int main() {
-	My_string str = "Hello";
-	My_string str1 = "World";
-	My_string result = str1 + str;
-	cout << str.length() << endl;
-	cout << str1.length() << endl;
-	cout << result.length() << endl;
+	setlocale(LC_ALL, "Russian");
+	
+
 	system("pause");
 	return 0;
 }

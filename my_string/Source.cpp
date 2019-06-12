@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstdlib>
+#include <conio.h>
 
 using namespace std;
 
@@ -71,6 +73,9 @@ public:
 	}
 
 	friend ostream& operator <<(ostream &out, const My_string &other) {
+		if (other.str == nullptr) {
+			return out;
+		}
 		out << other.str;
 		return out;
 	}
@@ -78,6 +83,20 @@ public:
 	int length() {
 		return str_lenght;
 	}
+	/*
+	friend istream& operator >>(istream &in, My_string &other) {
+		char ch = 0;
+		int counter = 0;
+		while (counter<10) {
+			cin >> ch;
+			counter++;
+		}
+		other.str_lenght = counter;
+		other.str=new char[other.str_lenght+1]
+
+		return in;
+	}
+	*/
 private:
 	char *str;
 	int str_lenght = 0;
@@ -113,7 +132,18 @@ void My_string::print() {
 
 int main() {
 	setlocale(LC_ALL, "Russian");
-
+	char ch,name[20];
+	int counter = 0;
+	while (counter<20) {
+		cin >> ch;
+		if (_getch() == '\n') break;
+		name[20] = ch;
+		counter++;
+	}
+	name[20] = '\0';
+	for (int i = 0; i < counter; i++) {
+		cout << name[i];
+	}
 
 	system("pause");
 	return 0;

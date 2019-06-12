@@ -11,7 +11,7 @@ public:
 	My_string(const char *str);
 	~My_string();
 	void print();
-	//Переопределение оператора =
+
 	My_string& operator =(const My_string &other) {
 
 		if (this->str != nullptr) {
@@ -69,6 +69,18 @@ public:
 		}
 		return true;
 	}
+	 bool operator !=(const My_string &other) {
+		 if (this->str_lenght != other.str_lenght) {
+			 return true;
+		 }
+		 for (int i = 0; i < this->str_lenght; i++)
+		 {
+			 if (this->str[i] != other.str[i]) {
+				 return true;
+			 }
+		 }
+		 return false;
+	}
 
 	friend ostream& operator <<(ostream &out, const My_string &other) {
 		out << other.str;
@@ -123,7 +135,17 @@ int str_len(const char *str) {
 
 int main() {
 	setlocale(LC_ALL, "Russian");
-	
+	My_string str1 = "Str2";
+	My_string str2 = "Str2";
+	cout << str1 + str2 << endl;
+	if (str1 != str2) {
+		cout << "strings not same" << endl;
+	}
+	if (str1 == str2) {
+		cout << "strings are same" << endl;
+	}
+
+	cout << str1.length()+str2.length() << endl;
 
 	system("pause");
 	return 0;

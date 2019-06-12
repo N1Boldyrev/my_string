@@ -145,8 +145,6 @@ int main() {
 		cout << "strings are same" << endl;
 	}
 
-	cout << str1.length()+str2.length() << endl;
-
 	system("pause");
 	return 0;
 }

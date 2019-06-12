@@ -145,6 +145,7 @@ void My_string::print() {
 int main() {
 	setlocale(LC_ALL, "Russian");
 <<<<<<< HEAD
+<<<<<<< HEAD
 	My_string str1 = "Str2";
 	My_string str2 = "Str2";
 	cout << str1 + str2 << endl;
@@ -157,6 +158,8 @@ int main() {
 
 	cout << str1.length()+str2.length() << endl;
 =======
+=======
+>>>>>>> bdedd4eed2f2d0787c7748fd631b348d1ab7583c
 	char ch,name[20];
 	int counter = 0;
 	while (counter<20) {
@@ -169,6 +172,9 @@ int main() {
 	for (int i = 0; i < counter; i++) {
 		cout << name[i];
 	}
+<<<<<<< HEAD
+>>>>>>> bdedd4eed2f2d0787c7748fd631b348d1ab7583c
+=======
 >>>>>>> bdedd4eed2f2d0787c7748fd631b348d1ab7583c
 
 	system("pause");

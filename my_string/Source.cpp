@@ -11,7 +11,7 @@ public:
 	My_string(const char *str);
 	~My_string();
 	void print();
-	//Переопределение оператора =
+
 	My_string& operator =(const My_string &other) {
 
 		if (this->str != nullptr) {

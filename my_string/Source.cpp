@@ -111,19 +111,9 @@ void My_string::print() {
 	cout << endl;
 }
 
-int str_len(const char *str) {
-	int len = 0;
-	while (str != '\0')
-	{
-		len++;
-	}
-	return len;
-}
-
-
 int main() {
 	setlocale(LC_ALL, "Russian");
-	
+
 
 	system("pause");
 	return 0;
